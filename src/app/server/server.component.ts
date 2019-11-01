@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    /** this is the html element that allows the class to be used in the html template code. 
+    /** this is the html element that allows the class to be used in the html template code.
      * ensures default html elements arent overridden
      * should be a string and unique
      * "app-" is a typical prefix */
