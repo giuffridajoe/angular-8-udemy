@@ -11,13 +11,28 @@ import { Component, OnInit } from '@angular/core';
   // selector: '.app-servers',
   /** can declare a template URL (templateURL) or define the template in line within this file
    *  use backticks instead of single quotes if defining template here*/
-  template: `
-    <app-server></app-server>
-    <app-server></app-server>`,
+  // template: `
+  //   <app-server></app-server>
+  //   <app-server></app-server>`,
+  templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
+
 export class ServersComponent implements OnInit {
-  constructor() { }
+  allowNewServer = false;
+
+  constructor() {
+    /** this is a javascript method that will disable something after time passes
+     * this takes no arguments
+     * first param of the function body is the thing that you want to do after the time expires
+     * second param of the function body is the time to wait
+     *
+     * this technique is called property binding
+     */
+    setTimeout(() => {
+      this.allowNewServer = true;
+    }, 2000);
+  }
   ngOnInit() {
   }
 }
