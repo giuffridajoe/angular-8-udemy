@@ -1,2 +1,16 @@
+<label>Server Name</label>
+<input
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)">
+<p>{{ serverName }}</p>
+<button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add Server
+</button>
+<!-- using parens () is an Angualr technique called click binding-->
+<!-- <p [innerText] = "allowNewServer"></p> -->
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>

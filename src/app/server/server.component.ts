@@ -11,5 +11,10 @@ import { Component } from '@angular/core';
 })
 /** the 'export' allows this class to be used elswhere */
 export class ServerComponent {
+    serverId = 10;
+    serverStatus = 'offline';
 
+    getServerStatus() {
+        return this.serverStatus;
+    }
 }
