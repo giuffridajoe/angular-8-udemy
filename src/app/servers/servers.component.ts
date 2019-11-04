@@ -24,6 +24,9 @@ export class ServersComponent implements OnInit {
   serverName = 'Testserver';
   userName = '';
   serverCreated = false;
+  servers = ['Testserver', 'Testserver 2'];
+  toggleParagraph = false;
+  buttonClicks = [];
 
   constructor() {
     /** this is a javascript method that will disable something after time passes
@@ -42,6 +45,7 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
@@ -51,5 +55,10 @@ export class ServersComponent implements OnInit {
 
   onResetUserName() {
     this.userName = '';
+  }
+
+  logButtonClick() {
+    this.buttonClicks.push(this.buttonClicks.length + 1);
+    this.toggleParagraph = !this.toggleParagraph;
   }
 }

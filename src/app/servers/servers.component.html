@@ -36,10 +36,7 @@ class="form-control"
 <ng-template #noServer>
     <p>No Server was created!</p>
 </ng-template>
-
-
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
 <br><br>
 
 <label>UserName</label>
@@ -53,3 +50,12 @@ class="form-control"
     [disabled]="userName === ''"
     (click)="onResetUserName()">Reset User
 </button>
+
+<button 
+    class="btn btn-primary"
+    (click)="logButtonClick()">Display Details</button>
+<p *ngIf="toggleParagraph">Secret password  = tuna</p>
+<div 
+    *ngFor="let click of buttonClicks"
+    [ngStyle]="{backgroundColor: click >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': click >= 5}">{{ click }}</div>
